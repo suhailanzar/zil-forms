@@ -1,0 +1,103 @@
+<div class="flex justify-center ">
+
+
+    <div class=" m-20 p-6  border-2  gap-4 bg-white rounded-lg">
+
+
+
+        <h1 class="text-2xl  font-bold p-4">Register</h1>
+        <h5 class="text-sm text-gray-500 ms-4">Please fill in the form to register</h5>
+
+        <form action="" class="m-3 p-4" (ngSubmit)="submit()" [formGroup]="form">
+
+            <div class="flex justify-between">
+
+                <div >
+                    <label for="">First Name</label> <br>
+                    <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" type="text" formControlName="firstName" placeholder="FirstName"><br>
+                    <span *ngIf="fields['firstName'].invalid && fields['firstName'].touched"
+                        class="text-sm text-red-600">entere a valid first name</span>
+                </div>
+                <div>
+                    <label for="">Last Name</label><br>
+                    <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" type="text" formControlName="lastName" placeholder="LastName"><br>
+                    <span *ngIf="fields['lastName'].invalid && fields['lastName'].touched"
+                        class="text-sm text-red-600">entere a valid Last name</span>
+
+                </div>
+
+            </div>
+
+            <div class="flex justify-between">
+
+                <div>
+                    <label for="">Age</label><br>
+                    <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" placeholder="age" type="number" formControlName="age"><br>
+                    <span *ngIf="fields['age'].invalid && fields['age'].touched" class="text-sm text-red-600">entere a
+                        valid age between 17 to 22</span>
+
+                </div>
+                <div>
+                    <label for="">Email</label><br>
+                    <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" placeholder="email" type="email" formControlName="workEmail"><br>
+                    <span *ngIf="fields['workEmail'].invalid && fields['workEmail'].touched"
+                        class="text-sm text-red-600">entere a valid email</span>
+
+                </div>
+
+            </div>
+
+            <div class=" mb-4 ">
+
+                <div class="mb-4">
+
+                    <label for="">gender</label>
+                </div>
+
+                <div class="flex gap-4">
+                 <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" type="radio">
+                <label for="">male</label>
+                <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" type="radio">
+                <label for="">female</label>
+                <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" type="radio">
+                <label for="">prefer not to say</label>
+                </div> <br>
+                
+
+                <span *ngIf="fields[''].invalid && fields[''].touched" class="text-sm text-red-600">entere a valid first
+                    name</span>
+
+
+            </div>
+
+
+            <div class="flex justify-between">
+
+                <div>
+                    <label for="">password</label><br>
+                    <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" placeholder="password" type="text" formControlName="Password"><br>
+                    <span *ngIf="fields['Password'].invalid && fields['Password'].touched"
+                        class="text-sm text-red-600">password must contain more than 5 character</span>
+
+                </div>
+                <div>
+                    <label for="">confirm password</label><br>
+                    <input class="border-2 rounded-md border-gray-200 pt-3 pr-5 w-auto" placeholder="confirm password" type="text" formControlName="confirmPassword"><br>
+                    <span *ngIf="fields['confirmPassword'].invalid && fields['confirmPassword'].touched"
+                        class="text-sm text-red-600">password doesnt match</span>
+
+                </div>
+
+            </div>
+
+
+            <div>
+                <button class="bg-blue-500 text-white px-2 w-full mt-4 rounded" [disabled]="!this.form.valid">Register</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
